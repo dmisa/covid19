@@ -42,10 +42,14 @@
   <div class="container-fluid h-100 text-dark pt-0 text-center" id="form">
     <div class="row justify-content-center align-items-center h-100">
       <div class="col col-sm-6 col-md-6 col-lg-5 col-xl-5 border border-dark rounded bg-dark">
+
+
+
+
         <form class="mt-5">
           <div class="form-group">
-            <label for="exampleFormControlInput1">1) Date with the most deaths in a country. Enter a country below and press the submit button!</label>
-            <input type="country" class="form-control" id="exampleFormControlInput1" placeholder="Country">
+            <label for="q1">1) Date with the most deaths in a country. Enter a country below and press the submit button!</label>
+            <input type="text" class="form-control" id="q1" name="country" placeholder="Country" value="" required>
           </div>
           <button type="submit" class="btn btn-primary buttonz">Submit</button>
         </form>
@@ -56,8 +60,8 @@
 
         <form>
           <div class="form-group">
-            <label for="exampleFormControlInput1">2) Top ? days with the most cases</label>
-            <input class="form-control" type="number" value="42" id="example-number-input">
+            <label for="q2">2) Top ? days with the most cases</label>
+            <input class="form-control" type="number" value="" placeholder="How many days to display" id="q2" required>
           </div>
           <button type="submit" class="btn btn-primary buttonz">Submit</button>
         </form>
@@ -66,19 +70,8 @@
 
         <form>
           <div class="form-group">
-            <label for="exampleFormControlInput1">3) Cases and Deaths until a date. Please enter a date. (form: yyyy:mm:dd)</label>
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-          </div>
-          <button type="submit" class="btn btn-primary buttonz">Submit</button>
-        </form>
-        <hr>
-
-
-
-        <form>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">4) First date that a country has COVID-19 case-es. Enter a country below!</label>
-            <input type="country" class="form-control" id="exampleFormControlInput1" placeholder="Country">
+            <label for="q3">3) Cases and Deaths until a date. Please enter a date.</label>
+            <input class="form-control" name="date" type="date" value=""  id="q3" required>
           </div>
           <button type="submit" class="btn btn-primary buttonz">Submit</button>
         </form>
@@ -88,11 +81,23 @@
 
         <form>
           <div class="form-group">
-            <label for="exampleFormControlInput1">5) Continent with the most cases in a selected period.</label>
-            <label class="ft">From</label>
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-            <label class="ft">To</label>
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+            <label for="q4">4) First date that a country has COVID-19 case(es). Enter a country below!</label>
+            <input type="text" class="form-control" id="q4" placeholder="Country" required>
+          </div>
+          <button type="submit" class="btn btn-primary buttonz">Submit</button>
+        </form>
+        <hr>
+
+
+        <form id="rangeForm">
+          <div class="form-group">
+            <label for="q5">5) Continent with the most cases in a selected period.</label>
+            <div id="q5">
+              <label for="from" class="ft">From</label>
+              <input class="form-control" type="date" value="" id="from" required>
+              <label for="to" class="ft">To</label>
+              <input class="form-control" type="date" value="" id="to" required>
+            </div>
           </div>
           <button type="submit" class="btn btn-primary buttonz">Submit</button>
         </form>
@@ -100,11 +105,13 @@
 
         <form>
           <div class="form-group">
-            <label for="exampleFormControlInput1">6) Country with the most cases in a selected period.</label>
-            <label class="ft">From</label>
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-            <label class="ft">To</label>
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+            <label for="q6">5) Country with the most cases in a selected period.</label>
+            <div id="q6">
+              <label for="from" class="ft">From</label>
+              <input class="form-control" type="date" value="" id="from" required>
+              <label for="to" class="ft">To</label>
+              <input class="form-control" type="date" value="" id="to" required>
+            </div>
           </div>
           <button type="submit" class="btn btn-primary buttonz">Submit</button>
         </form>
@@ -112,8 +119,8 @@
 
         <form>
           <div class="form-group">
-            <label for="exampleFormControlInput1">7) Top ? countries with least cases/population. Enter below how many countries to display.</label>
-            <input class="form-control" type="number" value="42" id="example-number-input">
+            <label for="q7">7) Top ? countries with least cases/population. Enter below how many countries to display.</label>
+            <input class="form-control" type="number" value="" placeholder="how many countries" id="q7" required>
           </div>
           <button type="submit" class="btn btn-primary buttonz">Submit</button>
         </form>
@@ -145,7 +152,8 @@
  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ <script src="//oss.maxcdn.com/momentjs/2.8.2/moment.min.js"></script>
  <script src="../js/validation.js"></script>
-
+ 
 </body>
 </html>
